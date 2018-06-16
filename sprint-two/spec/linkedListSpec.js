@@ -51,5 +51,28 @@ describe('linkedList', function() {
     expect(linkedList.contains(4)).to.equal(false);
   });
 
+  it('should determine the size of the linkedList', function() {
+    linkedList.addToTail(4);
+    linkedList.addToTail(5);
+    linkedList.addToTail(1);
+    linkedList.addToTail(7);
+    linkedList.addToTail(3);
+    linkedList.addToTail(4);
+    linkedList.addToTail(9);
+    expect(linkedList.size()).to.equal(7);
+  });
+
+  // it('should return the node when finding a value', function() { //Broken
+  //   linkedList.addToTail(4);
+  //   linkedList.addToTail(5);
+  //   linkedList.addToTail(1);
+  //   linkedList.addToTail(7);
+  //   linkedList.find(5)
+  //   linkedList.currentNode.addHere(11)
+  //   linkedList.addToTail(3);
+  //   linkedList.addToTail(4);
+  //   linkedList.addToTail(9);
+  //   expect(linkedList.contains(11)).to.equal(true);
+  // });
   // add more tests here to test the functionality of linkedList
 });
