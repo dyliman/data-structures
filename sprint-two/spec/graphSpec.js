@@ -68,4 +68,20 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+    it('should return size of the graph', function() {
+    var connectToFive = function(item) {
+      graph.addEdge(item, 5);
+    };
+    graph.addNode(5);
+    graph.addNode(2);
+    graph.addNode(1);
+    graph.addNode(3);
+    graph.removeNode(5);
+    expect(graph.size()).to.equal(3);
+    graph.addNode(7);
+    graph.addNode(8);
+    graph.addNode(9);
+    expect(graph.size()).to.equal(6);
+  });
 });
