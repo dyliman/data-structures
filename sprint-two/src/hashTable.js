@@ -13,6 +13,7 @@ HashTable.prototype.insert = function(k, v) {
   if(bucket === null || bucket === undefined){
     bucket = [];
     bucket.push([k,v]);
+    this.size += 1;
   }
   
   for(var i = 0; i < bucket.length; i++){
@@ -24,11 +25,12 @@ HashTable.prototype.insert = function(k, v) {
   
   if(found === 0){
     bucket.push([k,v]);
+    this.size += 1;
   }
 
   this._storage.set(index, bucket);
   
-  this.size += 1;
+
 
   if((this.size / this._limit) > 0.75){
       this.resize(true);
@@ -87,6 +89,9 @@ this.size = newHash.size;
 
 }
 
+HashTable.prototype.count = function(){
+  return this.size;
+}
 
 /*
  * Complexity: What is the time complexity of the above functions?

@@ -73,4 +73,13 @@ describe('hashTable', function() {
     hashTable.remove('Mr.');
     expect(hashTable._limit).to.equal(8);
   });
+
+  it('should return the size of the hash', function() {
+    hashTable.insert('Bob', 'Loblaw');
+    hashTable.insert('Bob', 'Barker');
+    expect(hashTable.count()).to.equal(1);
+    hashTable.insert('Steven', 'Spielberg');
+    hashTable.insert('Benny', 'Spielberg');
+    expect(hashTable.count()).to.equal(3);
+  });
 });
