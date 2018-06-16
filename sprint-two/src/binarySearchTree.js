@@ -2,6 +2,7 @@ var BinarySearchTree = function(value) {
   this.value = value;
   this.left = null;
   this.right = null;
+  this.count = 1
 };
 
 
@@ -49,8 +50,18 @@ BinarySearchTree.prototype.depthFirstLog = function(cb){
   }
 }
 
+BinarySearchTree.prototype.size = function(){
+  if(this.left !== null){
+    this.count += this.left.size();
+  }
+  if(this.right !== null){
+    this.count += this.right.size();
+  }
 
+  return this.count;
+}
 
+//make tree balanced
 
 
 /*
